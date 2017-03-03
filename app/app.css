@@ -1,25 +1,111 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.center{
+  text-align: center;
 }
 
-.menu:before {
-  content: "[";
+#header{
+  background-color: #1976D2;
+  color: aliceblue;
 }
 
-.menu:after {
-  content: "]";
+#navbar{
+  background-color: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  border-radius: 0px;
 }
 
-.menu > li {
-  display: inline;
+.blink{
+    animation: blinker 1s linear infinite;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  background-color: #604B92;
+}
+
+.wrapper {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.circle,
+#planet {
+  position: relative;
+}
+
+#planet {
+  z-index: 2;
+}
+
+.circle {
+  z-index: 1;
+}
+
+.circle,
+#planet {
+  -webkit-transform: rotate3d(0, 0, 0, 0deg);
+          transform: rotate3d(0, 0, 0, 0deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation: rotate 9s linear infinite;
+          animation: rotate 9s linear infinite;
+}
+
+#circle5 {
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+
+#circle4 {
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+}
+
+#circle3 {
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+}
+
+#circle2 {
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+            transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+            transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+            transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+            transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+
+@keyframes blinker {
+  80% { opacity: 0; }
 }
